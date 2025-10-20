@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Restaurant Tycoon — demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Restaurant Tycoon</h1>
+    <div id="hud">
+      <div class="stat">Money: ¥<span id="money">0</span></div>
+      <div class="stat">Day: <span id="day">1</span></div>
+      <div class="stat">Reputation: <span id="rep">50</span></div>
+      <div class="stat">Customers Served: <span id="served">0</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section id="left">
+      <canvas id="game" width="720" height="360"></canvas>
+      <div id="controls">
+        <button id="startBtn">Start Day</button>
+        <button id="pauseBtn">Pause</button>
+        <span id="msg"></span>
+      </div>
+    </section>
+
+    <aside id="right">
+      <h2>Management</h2>
+      <div class="panel">
+        <label>Dish price: ¥<input type="number" id="priceInput" min="100" step="10" value="600"></label>
+        <button id="savePrice">Set Price</button>
+      </div>
+
+      <div class="panel">
+        <h3>Hire Staff</h3>
+        <div class="hire">
+          <div>Waiter (¥2000)</div>
+          <button class="hireBtn" data-role="waiter" data-cost="2000">Hire</button>
+        </div>
+        <div class="hire">
+          <div>Chef (¥3000)</div>
+          <button class="hireBtn" data-role="chef" data-cost="3000">Hire</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Stock / Ingredients</h3>
+        <div>Ingredients: <span id="ingredients">10</span></div>
+        <button id="buyIngr">Buy 5 (¥500)</button>
+      </div>
+
+      <div class="panel">
+        <h3>Upgrades</h3>
+        <button id="upgradeKitchen">Upgrade Kitchen (+cook speed) ¥4000</button>
+      </div>
+
+      <div class="panel small">
+        <h3>Quick Tips</h3>
+        <ul>
+          <li>Click a customer to seat them.</li>
+          <li>Customers wait; serve before patience runs out.</li>
+          <li>Hired staff automate parts: waiter seats, chef cooks.</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <small>Save: localStorage. This is a demo scaffold — extend as you like!</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
